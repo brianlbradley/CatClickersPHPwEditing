@@ -179,7 +179,7 @@ var adminView = {
       this.$save.addEventListener("click", function() {
 			  octopus.updateFieldList();
               catView.render();
-              catList.hide();
+
               catList.render(false);
 
 
@@ -195,7 +195,7 @@ var adminView = {
   },
 
   hideAdminView: function() {
-    	this.$formElement.style.display = "none";
+    	this.formElement.style.display = "none";
   },
 
 //update the DOM elements with values from the current cat
