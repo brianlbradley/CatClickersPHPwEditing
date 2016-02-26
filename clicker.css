@@ -1,8 +1,10 @@
-h1 {text-align:center};
-IMG.picture {
-    display: block;
-    margin-left: auto;
-    margin-right: auto }
+
 body {
-	background-color: pink;
+	background-color: blue;
+}
+p {
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 150%;
+	color:grey;
 }

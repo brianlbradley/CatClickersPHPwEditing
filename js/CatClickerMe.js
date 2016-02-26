@@ -123,6 +123,8 @@ render: function() {
         var cats = octopus.getCats();
 
         // empty the cat list
+         // empty the cat list
+        this.catListElem.innerHTML = '';
 
 
         // loop over the cats
@@ -142,6 +144,7 @@ render: function() {
                     octopus.setCurrentCat(catCopy);
                     catView.render();
                     adminView.render();
+
 
                 };
             })(cat));
@@ -179,9 +182,8 @@ var adminView = {
       this.$save.addEventListener("click", function() {
 			  octopus.updateFieldList();
               catView.render();
-
-              catList.render(false);
-
+              catList.render();
+              adminView.hideAdminView();
 
 
       }
