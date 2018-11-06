@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Cat Clicker PHP Edit with AngularJS</title>
+
+        <script src="angular.min.js"></script>
+        <script src = "js/CatClickerMe.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel = "stylesheet" type ="text/css" href ="bootstrap.min.css">
+        <link rel= "stylesheet" type = "text/css" href ="clicker1.css">
+
+    </head>
+    <body ng-app='myApp'>
+
+      <div ng-controller="MainController as vm">
+
+        <div class = "container"> </div>
+          <div class = "row">
+            <div class = "col-md-2">
+              <div ng-repeat ="cat in Cats">
+                <h3 ng-click= "vm.selectCat(cat)"> {{cat.CatName}} </h3>
+              </div>
+              <hr>
+
+              <h3> {{vm.selectedCat.CatName}} </h3>
+                 <img ng-src ="{{vm.selectedCat.ImagePath}}" <img/>
+
+            <br>
+
+            </div>
+            <div class ="col-md-4">
+
+            <table class="box on" ng-hide="toggle" ng-animate="'box'"border='1' style='border-collapse: collapse;'>
+                <tr>
+                    <th>Cat Name </th>
+                    <th>Image Path</th>
+
+                </tr>
+
+                <tr>
+                      <td><input type='text'  ng-model='CatName'></td>
+                      <td><input type='text'  ng-model='ImagePath'></td>
+                      <td>&nbsp;</td>
+                      <td><input type='button' class='clear' value='Save' ng-click="add()";"clearCatName()";"clearImagePath()"></td>
+
+                </tr>
+
+                <tr ng-repeat='cat in Cats'>
+
+                    <td>
+                        <input type='text' ng-model='cat.CatName' ng-keyup='updateDetail(cat,"CatName")'>
+                    </td>
+                    <td>
+                        <input type='text' ng-model='cat.ImagePath' ng-keyup='updateDetail(cat,"ImagePath")'>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td><input type = 'button'  ng-click ='remove($index, cat.id);' value = 'Delete';></td>
+
+                </tr>
+            </table>
+            <br>
+            <br>
+            <button ng-click="toggle=!toggle">{{toggleText}}</button>
+
+        </div>
+        <footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        </footer>
+   </body>
+  </html>
